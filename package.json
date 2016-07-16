@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "The memory game",
   "main": "index.js",
+  "repository": "n/a",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-index": "cp src/index.html build",
+    "babel": "babel src -d build && npm run copy-index",
+    "dev": "npm run babel && node build/app.js"
   },
   "keywords": [
     "memory",
@@ -12,11 +16,11 @@
   ],
   "author": "Mitchell McKenzie",
   "license": "MIT",
-  "dependencies":{
+  "dependencies": {
+    "lodash": "^4.13.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "lodash": "^4.13.1",
-    "react-redux":"^4.4.5",
+    "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "reselect": "^2.5.3"
   },
@@ -30,6 +34,8 @@
     "proxyquire": "^1.7.10",
     "request": "^2.73.0",
     "serve-static": "^1.11.1",
+    "finalhandler": "^0.5.0",
+    "http": "0.0.0",
     "sinon": "^1.17.4"
   }
 }
