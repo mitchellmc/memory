@@ -6,12 +6,11 @@
   "repository": "n/a",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel src -d build && npm run copy-index",
     "clean": "rimraf build",
     "copy-index": "cp src/index.html build",
-    "dev": "npm run build && npm run server",
     "build": " npm run clean && mkdir build && npm run copy-index && webpack --env.dev",
-    "server": "webpack-dev-server --env.div --content-base build --port 3000"
+    "server": "webpack-dev-server --env.div --content-base build --port 3000",
+    "dev": "npm run build && npm run server"
   },
   "keywords": [
     "memory",
@@ -35,15 +34,12 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
-    "finalhandler": "^0.5.0",
-    "http": "0.0.0",
     "mocha": "^2.5.3",
     "npm": "^3.10.5",
     "proxyquire": "^1.7.10",
     "redux-devtools": "^3.3.1",
     "request": "^2.73.0",
     "rimraf": "^2.5.3",
-    "serve-static": "^1.11.1",
     "sinon": "^1.17.4",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
