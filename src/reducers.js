@@ -1,9 +1,10 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
+import { generateMemoryBoard } from './generator';
 
 const memoryboard = (state = [], action) =>   {
   switch(action.type){
     default:
-      return [[1,3],[3,2],[5,6]];
+      return generateMemoryBoard(3,4);
   }
 };
 

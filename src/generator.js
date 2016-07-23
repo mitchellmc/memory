@@ -30,8 +30,9 @@ export function shuffledMemoryCardIds(highestCardId){
 }
 
 
-export function generateMemoryBoard(row, column, highestCardId){
+export function generateMemoryBoard(row, column){
     const memoryboard = [];
+    const highestCardId = row * column;
     const shuffledCards = shuffledMemoryCardIds(highestCardId);
 
     for(let j = 0 ; j < row ; j++){
@@ -44,6 +45,3 @@ export function generateMemoryBoard(row, column, highestCardId){
 
   return memoryboard;
 }
-
-
-//generateMemoryBoard(3, 4, 12);

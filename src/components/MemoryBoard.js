@@ -7,13 +7,7 @@ class MemoryBoard extends React.Component {
     testAction: PropTypes.func,
   };
 
-  // static defaultProps = {
-  //   ...Component.defaultProps,
-  //   memoryboard: [[1,3],[4,2],[5,6]],
-  // };
-
   render(){
-
     const {
       memoryboard
     } = this.props;
@@ -21,6 +15,16 @@ class MemoryBoard extends React.Component {
     return (
       <div>
         <h2>Memory Board</h2>
+        <select onChange={(evt) =>{
+          // console.log(evt.target.selectedIndex);
+          console.log(evt.target.value);
+        }}>
+          <option value="6">6</option>
+          <option value="12">12</option>
+          <option value="16">16</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+        </select>
         <input
           id='test'
           name='test'

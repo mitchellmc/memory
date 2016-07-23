@@ -6,3 +6,10 @@ export function testAction(messageText = 'haha'){
       text: messageText,
   };
 };
+
+export function setMemoryBoard(dimensions = 6){
+  return {
+      type: 'SET_BOARD',
+      dimensions,
+  };
+};
