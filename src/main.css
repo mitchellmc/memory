@@ -1,0 +1,161 @@
+
+
+
+
+.giraffe {
+	background: url('./animals.jpg') no-repeat -112px -63px;
+	width: 481px;
+	height: 578px;
+}
+
+.alligator {
+  background: url('./animals.jpg') no-repeat -2476px -62px;
+  width: 427px;
+  height: 542px;
+}
+
+.dog {
+	background: url('./animals.jpg') no-repeat -95px -660px;
+	width: 480px;
+	height: 553px;
+}
+
+.lemur {
+	background: url('./animals.jpg') no-repeat -616px -704px;
+	width: 504px;
+	height: 496px;
+}
+
+.bear {
+	background: url('./animals.jpg') no-repeat -1139px -671px;
+	width: 430px;
+	height: 516px;
+}
+
+.cat {
+	background: url('./animals.jpg') no-repeat -1611px -655px;
+	width: 509px;
+	height: 530px;
+}
+
+.chicken {
+	background: url('./animals.jpg') no-repeat -2127px -671px;
+	width: 370px;
+	height: 505px;
+}
+
+.bunny {
+  background: url('./animals.jpg') no-repeat -2490px -604px;
+  width: 495px;
+  height: 636px;
+}
+
+.sheep {
+	background: url('./animals.jpg') no-repeat -63px -1264px;
+	width: 522px;
+	height: 553px;
+}
+
+.koala {
+	background: url('./animals.jpg') no-repeat -616px -1295px;
+	width: 479px;
+	height: 492px;
+}
+
+.cow {
+	background: url('./animals.jpg') no-repeat -1167px -1263px;
+	width: 354px;
+	height: 546px;
+}
+
+.donkey {
+	background: url('./animals.jpg') no-repeat -1615px -1247px;
+	width: 431px;
+	height: 553px;
+}
+
+.elephant {
+  background: url('./animals.jpg') no-repeat -2079px -1268px;
+  width: 486px;
+  height: 516px;
+}
+
+.duck {
+  background: url('./animals.jpg') no-repeat -2607px -1273px;
+  width: 360px;
+  height: 513px;
+}
+
+.mountain-lion {
+	background: url('./animals.jpg') no-repeat -52px -1854px;
+	width: 436px;
+	height: 515px;
+}
+
+.hippo {
+	background: url('./animals.jpg') no-repeat -576px -1813px;
+	width: 396px;
+	height: 567px;
+}
+
+.frog {
+	background: url('./animals.jpg') no-repeat -1039px -1839px;
+	width: 514px;
+	height: 530px;
+}
+
+.mouse {
+	background: url('./animals.jpg') no-repeat -1599px -1825px;
+	width: 418px;
+	height: 560px;
+}
+
+.goat {
+	background: url('./animals.jpg') no-repeat -2063px -1808px;
+	width: 418px;
+	height: 607px;
+}
+
+.porcupine {
+	background: url('./animals.jpg') no-repeat -2495px -1855px;
+	width: 482px;
+	height: 554px;
+}
+
+.raccoon {
+	background: url('./animals.jpg') no-repeat -96px -2414px;
+	width: 417px;
+	height: 539px;
+}
+
+.monkey {
+	background: url('./animals.jpg') no-repeat -559px -2415px;
+	width: 534px;
+	height: 529px;
+}
+
+.lion {
+  background: url('./animals.jpg') no-repeat -1135px -2420px;
+  width: 399px;
+  height: 522px;
+}
+
+.panda {
+  background: url('./animals.jpg') no-repeat -1588px -2430px;
+  width: 427px;
+  height: 517px;
+}
+
+.pig {
+	background: url('./animals.jpg') no-repeat -1031px -1216px;
+	background-size: 1500px 1500px;
+	width: 198px;
+	height: 260px;
+}
+
+.penguin {
+	background: url('imgs/animals.jpg') no-repeat -1241px -1211px;
+	background-size: 1500px 1500px;
+	width: 240px;
+	height: 261px;
+}

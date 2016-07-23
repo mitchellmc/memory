@@ -32,7 +32,11 @@ class MemoryBoard extends React.Component {
           }}
         />
         {
-          memoryboard.map((currentRow) => currentRow.map((currentCell) => <MemorySquare/>))
+          memoryboard.map((currentRow, item) =>
+            currentRow.map((currentCell, item) =>
+              <MemorySquare/>
+            )
+          )
         }
       </div>
     );
