@@ -2,15 +2,16 @@ import React, {PropTypes} from 'react';
 
 class MemorySquare extends React.Component {
   static propTypes = {
-    // memoryboard: PropTypes.array,
-    // testAction: PropTypes.func,
+    cardId: PropTypes.number,
   };
 
   render(){
+    const { cardId } = this.props;
+
     return(
-      <div>
-        X
-      </div>
+      <span>
+        {cardId}
+      </span>
     );
   }
 };

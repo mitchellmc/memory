@@ -1,10 +1,9 @@
 import React, {Component, PropTypes} from 'react';
-import MemorySquare from './MemorySquare';
+import MemoryRow from './MemoryRow';
 
 class MemoryBoard extends React.Component {
   static propTypes = {
     memoryboard: PropTypes.array,
-    testAction: PropTypes.func,
     setMemoryBoard: PropTypes.func,
   };
 
@@ -28,9 +27,10 @@ class MemoryBoard extends React.Component {
         </select>
         {
           memoryboard.map((currentRow, item) =>
-            currentRow.map((currentCell, item) =>
-              <MemorySquare/>
-            )
+            <MemoryRow
+              key={item}
+              row={currentRow}
+            />
           )
         }
       </div>
