@@ -17,10 +17,10 @@ class MemorySquare extends React.Component {
 
   render(){
     const { cardId } = this.state;
-    let initialValue = 'X'
+
     return(
       <div
-        className='card'
+        className='flex-item'
         onClick={() => {
           this.showCard();
         }}

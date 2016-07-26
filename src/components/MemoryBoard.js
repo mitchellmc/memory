@@ -29,7 +29,7 @@ class MemoryBoard extends React.Component {
           </select>
         </div>
 
-        <div>
+        <div className='flex-container'>
           {
             memoryboard.map((currentRow, item) =>
               <MemoryRow
