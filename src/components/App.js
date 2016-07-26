@@ -1,5 +1,8 @@
 //import * as actionCreators from '../actions';
-import {testAction} from '../actions'
+import {
+  testAction,
+  setMemoryBoard,
+} from '../actions'
 import { bindActionCreators } from 'redux';
 import MemoryBoard from './MemoryBoard';
 import {connect} from 'react-redux'
@@ -10,7 +13,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   //return { actions: bindActionCreators(actionCreators, dispatch) };
-  return bindActionCreators({ testAction }, dispatch);
+  return bindActionCreators({
+    testAction,
+    setMemoryBoard, 
+  }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemoryBoard);

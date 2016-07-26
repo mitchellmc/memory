@@ -5,19 +5,20 @@ class MemoryBoard extends React.Component {
   static propTypes = {
     memoryboard: PropTypes.array,
     testAction: PropTypes.func,
+    setMemoryBoard: PropTypes.func,
   };
 
   render(){
     const {
-      memoryboard
+      memoryboard,
+      setMemoryBoard,
     } = this.props;
 
     return (
       <div>
         <h2>Memory Board</h2>
         <select onChange={(evt) =>{
-          // console.log(evt.target.selectedIndex);
-          console.log(evt.target.value);
+          setMemoryBoard(evt.target.value);
         }}>
           <option value="6">6</option>
           <option value="12">12</option>
@@ -25,16 +26,6 @@ class MemoryBoard extends React.Component {
           <option value="20">20</option>
           <option value="30">30</option>
         </select>
-        <input
-          id='test'
-          name='test'
-          type='button'
-          value='test'
-          onClick={() =>{
-            console.log(this.props.memoryboard)
-            this.props.testAction();
-          }}
-        />
         {
           memoryboard.map((currentRow, item) =>
             currentRow.map((currentCell, item) =>
