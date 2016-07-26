@@ -1,5 +1,14 @@
+.card {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	margin 10px 10px 10px 10px;
+}
 
-
+.board-selector {
+	display: block;
+	margin: 0px 0px 30px 0px;
+}
 
 
 .giraffe {

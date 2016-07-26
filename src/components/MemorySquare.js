@@ -9,9 +9,9 @@ class MemorySquare extends React.Component {
     const { cardId } = this.props;
 
     return(
-      <span>
+      <div className='card'>
         {cardId}
-      </span>
+      </div>
     );
   }
 };
