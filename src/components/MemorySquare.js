@@ -5,12 +5,27 @@ class MemorySquare extends React.Component {
     cardId: PropTypes.number,
   };
 
-  render(){
-    const { cardId } = this.props;
+  constructor(props, context) {
+    super(props, context);
 
+    this.state = {
+      cardId: 'X',
+    };
+  };
+
+  showCard = (e) => this.setState({cardId: this.props.cardId});
+
+  render(){
+    const { cardId } = this.state;
+    let initialValue = 'X'
     return(
-      <div className='card'>
-        {cardId}
+      <div
+        className='card'
+        onClick={() => {
+          this.showCard();
+        }}
+      >
+        { cardId }
       </div>
     );
   }
