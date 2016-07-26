@@ -21,7 +21,7 @@ const memoryboard = (state = [], action) => {
     case SET_BOARD_30:
       return generateMemoryBoard(5,6);
     default:
-      return generateMemoryBoard(3,4);
+      return generateMemoryBoard(2,3);
   }
 };
 
