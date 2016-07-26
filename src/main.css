@@ -2,7 +2,10 @@
 	display: inline-block;
 	height: 50px;
 	width: 50px;
-	margin 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+	background-color: #BF3FBF;
+	font-family: sans-serif;
+	text-align: center;
 }
 
 .board-selector {
