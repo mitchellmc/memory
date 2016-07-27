@@ -21,11 +21,11 @@ class MemoryBoard extends React.Component {
           <select onChange={(evt) =>{
             setMemoryBoard(evt.target.value);
           }}>
-            <option value='6'>6</option>
-            <option value='12'>12</option>
-            <option value='16'>16</option>
-            <option value='20'>20</option>
-            <option value='30'>30</option>
+            <option value='6'>6 Squares</option>
+            <option value='12'>12 Squares</option>
+            <option value='16'>16 Squares</option>
+            <option value='20'>20 Squares</option>
+            <option value='30'>30 Squares</option>
           </select>
         </div>
 

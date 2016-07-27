@@ -30,9 +30,12 @@ body{
 
 .board-selector > select {
 	display: block;
+	border: 5px solid #BF3FBF;
   margin-left: 2rem;
-  width: 3rem;
+  width: 12rem;
+	height: 1.6em;
   font-size: 1.3em;
+	text-indent: 1.5em;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
