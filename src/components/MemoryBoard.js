@@ -5,12 +5,14 @@ class MemoryBoard extends React.Component {
   static propTypes = {
     memoryboard: PropTypes.array,
     setMemoryBoard: PropTypes.func,
+    turnCard: PropTypes.func,
   };
 
   render(){
     const {
       memoryboard,
       setMemoryBoard,
+      turnCard,
     } = this.props;
 
     return (
@@ -35,6 +37,7 @@ class MemoryBoard extends React.Component {
               <MemoryRow
                 key={item}
                 row={currentRow}
+                turnCard={turnCard}
               />
             )
           }

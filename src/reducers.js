@@ -6,6 +6,7 @@ import {
   SET_BOARD_16,
   SET_BOARD_20,
   SET_BOARD_30,
+  TURN_CARD,
 } from './constants'
 
 const memoryboard = (state = [], action) => {
@@ -20,6 +21,8 @@ const memoryboard = (state = [], action) => {
       return generateMemoryBoard(4,5);
     case SET_BOARD_30:
       return generateMemoryBoard(5,6);
+    case TURN_CARD:
+      return state;
     default:
       return generateMemoryBoard(2,3);
   }

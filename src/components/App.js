@@ -2,6 +2,7 @@
 import {
   testAction,
   setMemoryBoard,
+  turnCard,
 } from '../actions'
 import { bindActionCreators } from 'redux';
 import MemoryBoard from './MemoryBoard';
@@ -15,7 +16,8 @@ function mapDispatchToProps(dispatch) {
   //return { actions: bindActionCreators(actionCreators, dispatch) };
   return bindActionCreators({
     testAction,
-    setMemoryBoard, 
+    setMemoryBoard,
+    turnCard,
   }, dispatch);
 };
 

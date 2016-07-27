@@ -4,6 +4,7 @@ import {
     SET_BOARD_16,
     SET_BOARD_20,
     SET_BOARD_30,
+    TURN_CARD,
 } from './constants';
 
 export function testAction(messageText = 'haha'){
@@ -31,5 +32,13 @@ export function setMemoryBoard(dimensions = 6){
 
   return {
       type: typeToReturn,
+  };
+};
+
+export function turnCard(cardId){
+  console.log('turning card');
+  return {
+    type: TURN_CARD,
+    cardId,
   };
 };
