@@ -3,12 +3,14 @@ import MemorySquare from './MemorySquare';
 
 class MemoryRow extends React.Component {
   static propTypes = {
+    rowId: PropTypes.number,
     row: PropTypes.array,
     turnCard: PropTypes.func,
   };
 
   render(){
     const {
+      rowId,
       row,
       turnCard,
     } = this.props;
@@ -19,7 +21,9 @@ class MemoryRow extends React.Component {
           row.map((currentCell, item) =>
             <MemorySquare
               key={item}
-              cardId={currentCell}
+              rowId={rowId}
+              columnId={item}
+              square={currentCell}
               turnCard={turnCard}
             />
           )

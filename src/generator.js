@@ -38,10 +38,39 @@ export function generateMemoryBoard(row, column){
     for(let j = 0 ; j < row ; j++){
       let row = [];
       for(let k = 0; k < column; k++){
-          row.push(shuffledCards.pop());
+          row.push(
+            {
+                cardId: shuffledCards.pop(),
+                status: 0,
+            }
+          );
       }
       memoryboard.push(row);
     }
 
   return memoryboard;
 }
+
+export function newBoard(board, row, column){
+
+  const originalCell = board[row][column];
+
+  const flippedCell = {
+    ...originalCell,
+    status: originalCell.status == 0 ? 1 : 0
+  }
+
+  const newRow = [
+    ...board[row].slice(0, column),
+    flippedCell,
+    ...board[row].slice(column + 1)
+  ]
+
+  const newBoard = [
+    ...board.slice(0, row),
+    newRow,
+    ...board.slice(row + 1)
+  ];
+
+  return newBoard;
+};

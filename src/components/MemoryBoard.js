@@ -20,7 +20,7 @@ class MemoryBoard extends React.Component {
         <h2>Memory Board</h2>
 
         <div className='board-selector'>
-          <select onChange={(evt) =>{
+          <select onChange={(evt) => {
             setMemoryBoard(evt.target.value);
           }}>
             <option value='6'>6 Squares</option>
@@ -36,6 +36,7 @@ class MemoryBoard extends React.Component {
             memoryboard.map((currentRow, item) =>
               <MemoryRow
                 key={item}
+                rowId={item}
                 row={currentRow}
                 turnCard={turnCard}
               />
