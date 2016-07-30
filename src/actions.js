@@ -45,7 +45,6 @@ export function setMemoryBoard(dimensions = 6) {
 }
 
 export function turnCard(row, column) {
-  console.log('turning card');
   return {
     type: TURN_CARD,
     row,
