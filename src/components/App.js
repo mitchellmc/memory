@@ -1,14 +1,17 @@
 import {
   testAction,
   setMemoryBoard,
-  turnCard,
+  turnCardAndEvaluateMatch,
 } from '../actions';
 import { bindActionCreators } from 'redux';
 import MemoryBoard from './MemoryBoard';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
-  return { memoryboard: state.memoryboard };
+  return {
+    memoryboard: state.memoryboard,
+    openCards: state.openCards,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -16,7 +19,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     testAction,
     setMemoryBoard,
-    turnCard,
+    turnCardAndEvaluateMatch,
   }, dispatch);
 }
 

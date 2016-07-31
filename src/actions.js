@@ -5,6 +5,7 @@ import {
     SET_BOARD_20,
     SET_BOARD_30,
     TURN_CARD,
+    CLEAR_OPEN_CARDS,
 } from './constants';
 
 export function testAction(messageText = 'haha') {
@@ -49,5 +50,47 @@ export function turnCard(row, column) {
     type: TURN_CARD,
     row,
     column,
+  };
+}
+
+export function turnCardAsync(row, column) {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(turnCard(row, column));
+    }, 2000);
+  };
+}
+
+export function clearOpenCards() {
+  return {
+    type: CLEAR_OPEN_CARDS,
+  };
+}
+
+export function turnCardAndEvaluateMatch(row, column) {
+  return (dispatch, getState) => {
+    const { openCards } = getState();
+    let isMatch = false;
+
+    if (openCards.length === 2) {
+      return;
+    }
+
+    dispatch(turnCard(row, column));
+
+    if (openCards.length === 2) {
+      if (openCards[0].cardId === openCards[1].cardId) {
+        isMatch = true;
+      }
+
+      if (isMatch) {
+        console.log('Matched');
+      } else {
+        console.log('No Match');
+        // this action will close up the current cards in on reducer
+        // and it will remove everythig from the opencards array in another reducer
+        dispatch(clearOpenCards());
+      }
+    }
   };
 }

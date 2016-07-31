@@ -5,14 +5,14 @@ class MemoryRow extends React.Component {
   static propTypes = {
     rowId: PropTypes.number,
     row: PropTypes.array,
-    turnCard: PropTypes.func,
+    turnCardAndEvaluateMatch: PropTypes.func,
   };
 
   render(){
     const {
       rowId,
       row,
-      turnCard,
+      turnCardAndEvaluateMatch,
     } = this.props;
 
     return (
@@ -24,7 +24,7 @@ class MemoryRow extends React.Component {
               rowId={rowId}
               columnId={item}
               square={currentCell}
-              turnCard={turnCard}
+              turnCardAndEvaluateMatch={turnCardAndEvaluateMatch}
             />
           )
         }

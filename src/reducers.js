@@ -7,10 +7,10 @@ import {
   SET_BOARD_20,
   SET_BOARD_30,
   TURN_CARD,
+  CLEAR_OPEN_CARDS,
 } from './constants';
 
 const memoryboard = (state = [], action) => {
-  console.log(action);
   switch (action.type) {
     case SET_BOARD_6:
       return generateMemoryBoard(2, 3);
@@ -24,13 +24,32 @@ const memoryboard = (state = [], action) => {
       return generateMemoryBoard(5, 6);
     case TURN_CARD:
       return newBoard(state, action.row, action.column);
+    // case CLEAR_OPEN_CARDS:
     default:
       return generateMemoryBoard(2, 3);
   }
 };
 
+const openCards = (state = [], action) => {
+  switch (action.type) {
+    case TURN_CARD:
+      return [
+        ...state,
+        {
+          row: action.row,
+          column: action.column,
+        },
+      ];
+    case CLEAR_OPEN_CARDS:
+      return [];
+    default:
+      return [];
+  }
+};
+
 const memoryapp = combineReducers({
   memoryboard,
+  openCards,
 });
 
 export default memoryapp;
