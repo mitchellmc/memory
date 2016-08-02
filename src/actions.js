@@ -64,14 +64,6 @@ export function turnCard(row, column) {
   };
 }
 
-export function turnCardAsync(row, column) {
-  return dispatch => {
-    setTimeout(() => {
-      dispatch(turnCard(row, column));
-    }, 2000);
-  };
-}
-
 export function clearOpenCards() {
   console.log('im clearing open cards!');
   return {
@@ -79,20 +71,20 @@ export function clearOpenCards() {
   };
 }
 
-export function evaluate() {
+export function evaluateInternal() {
   return (dispatch, getState) => {
     const { openCards, memoryboard } = getState();
 
-    console.log('ive got ', openCards.length, ' open cards');
     if (openCards.length === 2 &&
         (memoryboard[openCards[0].row][openCards[0].column].cardId
             === memoryboard[openCards[1].row][openCards[1].column].cardId)
       ) {
-      console.log(
-        'Matched',
-        memoryboard[openCards[0].row][openCards[0].column].cardId,
-        memoryboard[openCards[0].row][openCards[0].column].cardId
-      );
+      // console.log(
+      //   'Matched',
+      //   memoryboard[openCards[0].row][openCards[0].column].cardId,
+      //   memoryboard[openCards[0].row][openCards[0].column].cardId
+      // );
+      dispatch(clearOpenCards());
       return;
     }
 
@@ -100,8 +92,16 @@ export function evaluate() {
         (memoryboard[openCards[0].row][openCards[0].column].cardId
             !== memoryboard[openCards[1].row][openCards[1].column].cardId)
     ) {
-      console.log('No Match');
+      // console.log('No Match');
       dispatch(clearOpenCards());
     }
+  };
+}
+
+export function evaluate() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(evaluateInternal());
+    }, 1000);
   };
 }
