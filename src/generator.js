@@ -51,13 +51,13 @@ export function generateMemoryBoard(row, column){
   return memoryboard;
 }
 
-export function newBoard(board, row, column){
+export function updateBoard(board, row, column, status){
 
   const originalCell = board[row][column];
 
   const flippedCell = {
     ...originalCell,
-    status: originalCell.status == 0 ? 1 : 0
+    status: status
   }
 
   const newRow = [
@@ -74,3 +74,11 @@ export function newBoard(board, row, column){
 
   return newBoard;
 };
+
+
+export function closeBoard(board, openCards){
+  const firstBoard = updateBoard(board, openCards[0].row, openCards[0].column, 0);
+  const secondBoard = updateBoard(firstBoard, openCards[1].row, openCards[1].column, 0);
+
+  return secondBoard;
+}

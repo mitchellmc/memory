@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { generateMemoryBoard, newBoard } from './generator';
+import { generateMemoryBoard, updateBoard, closeBoard } from './generator';
 import {
   SET_BOARD_6,
   SET_BOARD_12,
@@ -23,8 +23,9 @@ const memoryboard = (state = [], action) => {
     case SET_BOARD_30:
       return generateMemoryBoard(5, 6);
     case TURN_CARD:
-      return newBoard(state, action.row, action.column);
-    // case CLEAR_OPEN_CARDS:
+      return updateBoard(state, action.row, action.column, 1);
+    case CLEAR_OPEN_CARDS:
+      return closeBoard(state, action.openCards);
     default:
       return generateMemoryBoard(2, 3);
   }

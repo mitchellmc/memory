@@ -64,10 +64,11 @@ export function turnCard(row, column) {
   };
 }
 
-export function clearOpenCards() {
+export function clearOpenCards(openCards) {
   console.log('im clearing open cards!');
   return {
     type: CLEAR_OPEN_CARDS,
+    openCards,
   };
 }
 
@@ -84,7 +85,7 @@ export function evaluateInternal() {
       //   memoryboard[openCards[0].row][openCards[0].column].cardId,
       //   memoryboard[openCards[0].row][openCards[0].column].cardId
       // );
-      dispatch(clearOpenCards());
+      dispatch(clearOpenCards(openCards));
       return;
     }
 
@@ -93,7 +94,7 @@ export function evaluateInternal() {
             !== memoryboard[openCards[1].row][openCards[1].column].cardId)
     ) {
       // console.log('No Match');
-      dispatch(clearOpenCards());
+      dispatch(clearOpenCards(openCards));
     }
   };
 }
