@@ -8,7 +8,8 @@ class MemorySquare extends React.Component {
       cardId: React.PropTypes.number,
       status: React.PropTypes.number
     }),
-    turnCardAndEvaluateMatch: PropTypes.func,
+    turnCard: PropTypes.func,
+    evaluate: PropTypes.func,
   };
 
   constructor(props, context) {
@@ -22,6 +23,8 @@ class MemorySquare extends React.Component {
       rowId,
       square,
       turnCardAndEvaluateMatch,
+      turnCard,
+      evaluate,
     } = this.props
 
     return(
@@ -29,7 +32,8 @@ class MemorySquare extends React.Component {
         className='flex-item'
         onClick={() => {
           console.log("my coords are ", rowId, columnId);
-          turnCardAndEvaluateMatch(rowId, columnId);
+          turnCard(rowId, columnId);
+          evaluate();
         }}
       >
         {
