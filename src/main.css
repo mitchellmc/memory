@@ -28,16 +28,16 @@ body{
 }
 
 .solved {
-	background: green;
+	background: #1eef57;
 }
 
 .unsolved {
-	background: #BF3FBF;
+	background: #c70395;
 }
 
 .board-selector > select {
 	display: block;
-	border: 5px solid #BF3FBF;
+	border: 1px solid #ff6f64;
   margin-left: 2rem;
   width: 12rem;
 	height: 1.6em;
@@ -45,6 +45,7 @@ body{
 	text-indent: 1.5em;
   -webkit-appearance: none;
   -moz-appearance: none;
+	background: url('./select.jpg') 96% / 15% no-repeat
 }
 
 
