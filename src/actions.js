@@ -6,15 +6,8 @@ import {
     SET_BOARD_30,
     TURN_CARD,
     CLEAR_OPEN_CARDS,
+    MATCH_OPEN_CARDS,
 } from './constants';
-
-export function testAction(messageText = 'haha') {
-  console.log('testAction fired ');
-  return {
-    type: 'TEST',
-    text: messageText,
-  };
-}
 
 export function setMemoryBoard(dimensions = 6) {
   let typeToReturn = SET_BOARD_6;
@@ -65,9 +58,15 @@ export function turnCard(row, column) {
 }
 
 export function clearOpenCards(openCards) {
-  console.log('im clearing open cards!');
   return {
     type: CLEAR_OPEN_CARDS,
+    openCards,
+  };
+}
+
+export function matchOpenCards(openCards) {
+  return {
+    type: MATCH_OPEN_CARDS,
     openCards,
   };
 }
@@ -80,12 +79,7 @@ export function evaluateInternal() {
         (memoryboard[openCards[0].row][openCards[0].column].cardId
             === memoryboard[openCards[1].row][openCards[1].column].cardId)
       ) {
-      // console.log(
-      //   'Matched',
-      //   memoryboard[openCards[0].row][openCards[0].column].cardId,
-      //   memoryboard[openCards[0].row][openCards[0].column].cardId
-      // );
-      dispatch(clearOpenCards(openCards));
+      dispatch(matchOpenCards(openCards));
       return;
     }
 
@@ -93,7 +87,6 @@ export function evaluateInternal() {
         (memoryboard[openCards[0].row][openCards[0].column].cardId
             !== memoryboard[openCards[1].row][openCards[1].column].cardId)
     ) {
-      // console.log('No Match');
       dispatch(clearOpenCards(openCards));
     }
   };
@@ -103,6 +96,6 @@ export function evaluate() {
   return dispatch => {
     setTimeout(() => {
       dispatch(evaluateInternal());
-    }, 1000);
+    }, 945);
   };
 }

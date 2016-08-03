@@ -1,3 +1,9 @@
+import {
+  FACING_DOWN,
+  FACING_UP,
+  SOLVED,
+} from './constants';
+
 export function shuffle(array){
    var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -41,7 +47,7 @@ export function generateMemoryBoard(row, column){
           row.push(
             {
                 cardId: shuffledCards.pop(),
-                status: 0,
+                status: FACING_DOWN,
             }
           );
       }
@@ -77,8 +83,15 @@ export function updateBoard(board, row, column, status){
 
 
 export function closeBoard(board, openCards){
-  const firstBoard = updateBoard(board, openCards[0].row, openCards[0].column, 0);
-  const secondBoard = updateBoard(firstBoard, openCards[1].row, openCards[1].column, 0);
+  const firstBoard = updateBoard(board, openCards[0].row, openCards[0].column, FACING_DOWN);
+  const secondBoard = updateBoard(firstBoard, openCards[1].row, openCards[1].column, FACING_DOWN);
+
+  return secondBoard;
+}
+
+export function solveBoard(board, openCards){
+  const firstBoard = updateBoard(board, openCards[0].row, openCards[0].column, SOLVED);
+  const secondBoard = updateBoard(firstBoard, openCards[1].row, openCards[1].column, SOLVED);
 
   return secondBoard;
 }

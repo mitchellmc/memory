@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import { generateMemoryBoard, updateBoard, closeBoard } from './generator';
+import {
+  generateMemoryBoard,
+  updateBoard,
+  closeBoard,
+  solveBoard,
+} from './generator';
 import {
   SET_BOARD_6,
   SET_BOARD_12,
@@ -8,6 +13,10 @@ import {
   SET_BOARD_30,
   TURN_CARD,
   CLEAR_OPEN_CARDS,
+  MATCH_OPEN_CARDS,
+  FACING_DOWN,
+  FACING_UP,
+  SOLVED,
 } from './constants';
 
 const memoryboard = (state = [], action) => {
@@ -23,7 +32,9 @@ const memoryboard = (state = [], action) => {
     case SET_BOARD_30:
       return generateMemoryBoard(5, 6);
     case TURN_CARD:
-      return updateBoard(state, action.row, action.column, 1);
+      return updateBoard(state, action.row, action.column, FACING_UP);
+    case MATCH_OPEN_CARDS:
+      return solveBoard(state, action.openCards);
     case CLEAR_OPEN_CARDS:
       return closeBoard(state, action.openCards);
     default:
@@ -42,6 +53,8 @@ const openCards = (state = [], action) => {
         },
       ];
     case CLEAR_OPEN_CARDS:
+      return [];
+    case MATCH_OPEN_CARDS:
       return [];
     default:
       return [];

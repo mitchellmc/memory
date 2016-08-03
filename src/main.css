@@ -16,7 +16,6 @@ body{
 }
 
 .flex-item {
-  background: #BF3FBF;
   padding: 5px;
   width: 100px;
   height: 75px;
@@ -26,6 +25,14 @@ body{
   font-weight: bold;
   font-size: 3em;
   text-align: center;
+}
+
+.solved {
+	background: green;
+}
+
+.unsolved {
+	background: #BF3FBF;
 }
 
 .board-selector > select {

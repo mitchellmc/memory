@@ -1,5 +1,4 @@
 import {
-  testAction,
   setMemoryBoard,
   turnCard,
   evaluate,
@@ -18,7 +17,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   // return { actions: bindActionCreators(actionCreators, dispatch) };
   return bindActionCreators({
-    testAction,
     setMemoryBoard,
     turnCard,
     evaluate,
