@@ -24,7 +24,7 @@ export function shuffle(array){
 }
 
 
-export function shuffledMemoryCardIds(highestCardId){
+export function generateMemoryCardIds(highestCardId){
   const cardIds = []
 
   for(let i = 1; i <= highestCardId/2; i ++){
@@ -32,14 +32,15 @@ export function shuffledMemoryCardIds(highestCardId){
     cardIds.push(i);
   }
 
-  return shuffle(cardIds);
+  return cardIds;
 }
 
 
 export function generateMemoryBoard(row, column){
     const memoryboard = [];
     const highestCardId = row * column;
-    const shuffledCards = shuffledMemoryCardIds(highestCardId);
+    const memoryCards = generateMemoryCardIds(highestCardId);
+    const shuffledCards = shuffle(memoryCards);
 
     for(let j = 0 ; j < row ; j++){
       let row = [];
