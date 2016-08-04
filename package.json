@@ -5,7 +5,8 @@
   "main": "index.js",
   "repository": "n/a",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register -C",
+    "test:watch": "./node_modules/.bin/mocha --compilers js:babel-register -w -C",
     "clean": "rimraf build",
     "copy-index": "cp src/{index.html,main.css,images/animals.jpg,images/select.jpg} build",
     "build": " npm run clean && mkdir build && npm run copy-index && webpack --env.dev",
