@@ -19,7 +19,7 @@ import {
   SOLVED,
 } from './constants';
 
-const memoryboard = (state = [], action) => {
+export const memoryboard = (state = [], action = { type: SET_BOARD_6 }) => {
   switch (action.type) {
     case SET_BOARD_6:
       return generateMemoryBoard(2, 3);
@@ -42,7 +42,7 @@ const memoryboard = (state = [], action) => {
   }
 };
 
-const openCards = (state = [], action) => {
+export const openCards = (state = [], action) => {
   switch (action.type) {
     case TURN_CARD:
       return [
