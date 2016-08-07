@@ -9,3 +9,4 @@ export const MATCH_OPEN_CARDS = 'MATCH_OPEN_CARDS';
 export const FACING_DOWN = 'FACING_DOWN';
 export const FACING_UP = 'FACING_UP';
 export const SOLVED = 'SOLVED';
+export const GAME_FINISHED = 'GAME_FINISHED';
