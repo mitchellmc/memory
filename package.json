@@ -8,7 +8,7 @@
     "test": "./node_modules/.bin/mocha --compilers js:babel-register",
     "test:watch": "./node_modules/.bin/mocha --compilers js:babel-register -w",
     "clean": "rimraf build",
-    "copy-index": "cp src/{index.html,main.css,images/animals.jpg,images/select.jpg} build",
+    "copy-index": "cp src/index.html build",
     "build": " npm run clean && mkdir build && npm run copy-index && webpack --env.dev",
     "server": "webpack-dev-server --env.dev --content-base build --port 3000",
     "dev": "npm run build && npm run server"
@@ -37,11 +37,13 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^1.5.5",
     "eslint-plugin-react": "^5.2.2",
+    "image-webpack-loader": "^2.0.0",
     "mocha": "^2.5.3",
     "npm": "^3.10.5",
     "nyc": "^7.1.0",
@@ -51,6 +53,7 @@
     "request": "^2.73.0",
     "rimraf": "^2.5.3",
     "sinon": "^1.17.4",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

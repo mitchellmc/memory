@@ -45,7 +45,7 @@ body{
 	text-indent: 1.5em;
   -webkit-appearance: none;
   -moz-appearance: none;
-	background: url('./select.jpg') 96% / 15% no-repeat
+	background: url('./images/select.jpg') 96% / 15% no-repeat
 }
 
 .score {
@@ -54,7 +54,7 @@ body{
 }
 
 
-.giraffe {
+/*.giraffe {
 	background: url('./animals.jpg') no-repeat -112px -63px;
 	width: 481px;
 	height: 578px;
@@ -210,4 +210,4 @@ body{
 	background-size: 1500px 1500px;
 	width: 240px;
 	height: 261px;
-}
+}*/
