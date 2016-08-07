@@ -2,6 +2,12 @@ body{
 	font-family: 'Lato', sans-serif;
 	margin: 0px;
 	padding: 0px;
+
+	background: url('./images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .flex-container {
@@ -28,11 +34,12 @@ body{
 }
 
 .solved {
-	background: #1eef57;
+	opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 
 .unsolved {
-	background: #c70395;
+	background: #983E9C;
 }
 
 .board-selector > select {

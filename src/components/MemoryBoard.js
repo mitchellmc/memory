@@ -41,8 +41,9 @@ class MemoryBoard extends React.Component {
           <div className='score'>
              {(() => {
               if(score.gameFinished) {
-                let calculatedScore = ((score.size/score.tries) * 100);
-                return `Your score is ${calculatedScore} !`
+                let calculatedScore = ((score.size/score.tries) * 1000);
+                const roundedScore = Math.round(calculatedScore);
+                return `Your score is ${roundedScore} !`
               }
             })()}
           </div>
