@@ -48,6 +48,11 @@ body{
 	background: url('./select.jpg') 96% / 15% no-repeat
 }
 
+.score {
+	font-size: 1.9em;
+	color: #ff6f64
+}
+
 
 .giraffe {
 	background: url('./animals.jpg') no-repeat -112px -63px;

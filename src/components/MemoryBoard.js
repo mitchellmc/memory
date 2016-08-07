@@ -4,6 +4,11 @@ import MemoryRow from './MemoryRow';
 class MemoryBoard extends React.Component {
   static propTypes = {
     memoryboard: PropTypes.array,
+    score: PropTypes.shape({
+      tries: PropTypes.number,
+      size: PropTypes.number,
+      matchedCards: PropTypes.number,
+    }),
     setMemoryBoard: PropTypes.func,
     turnCard: PropTypes.func,
     evaluate: PropTypes.func,
@@ -12,6 +17,7 @@ class MemoryBoard extends React.Component {
   render(){
     const {
       memoryboard,
+      score,
       setMemoryBoard,
       turnCard,
       evaluate,
@@ -31,6 +37,14 @@ class MemoryBoard extends React.Component {
             <option value='20'>20 Squares</option>
             <option value='30'>30 Squares</option>
           </select>
+          <div className='score'>
+             {(() => {
+              if(score.gameFinished) {
+                let calculatedScore = ((score.size/score.tries) * 100);
+                return `Your score is ${calculatedScore} !`
+              }
+            })()}
+          </div>
         </div>
 
         <div className='flex-container'>

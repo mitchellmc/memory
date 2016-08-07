@@ -11,6 +11,7 @@ function mapStateToProps(state) {
   return {
     memoryboard: state.memoryboard,
     openCards: state.openCards,
+    score: state.score,
   };
 }
 

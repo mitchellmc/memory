@@ -7,6 +7,7 @@ import {
     TURN_CARD,
     CLEAR_OPEN_CARDS,
     MATCH_OPEN_CARDS,
+    GAME_FINISHED,
 } from './constants';
 
 export function setMemoryBoard(dimensions = 6) {
@@ -71,6 +72,21 @@ export function matchOpenCards(openCards) {
   };
 }
 
+export function gameWonInternal() {
+  return {
+    type: GAME_FINISHED,
+  };
+}
+
+export function gameWon() {
+  return (dispatch, getState) => {
+    const { score } = getState();
+    if (score.matchedCards === score.size) {
+      dispatch(gameWonInternal());
+    }
+  };
+}
+
 export function evaluateInternal() {
   return (dispatch, getState) => {
     const { openCards, memoryboard } = getState();
@@ -80,6 +96,9 @@ export function evaluateInternal() {
             === memoryboard[openCards[1].row][openCards[1].column].cardId)
       ) {
       dispatch(matchOpenCards(openCards));
+      setTimeout(() => {
+        dispatch(gameWon());
+      }, 945);
       return;
     }
 

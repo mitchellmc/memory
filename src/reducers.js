@@ -17,6 +17,7 @@ import {
   FACING_DOWN,
   FACING_UP,
   SOLVED,
+  GAME_FINISHED,
 } from './constants';
 
 export const memoryboard = (state = [], action = { type: SET_BOARD_6 }) => {
@@ -61,9 +62,47 @@ export const openCards = (state = [], action) => {
   }
 };
 
+export const score = (state = {
+  tries: 0,
+  size: 6 ,
+  matchedCards: 0,
+  gameFinished: false,
+}, action) => {
+  switch (action.type) {
+    case TURN_CARD:
+      return {
+        ...state,
+        tries: state.tries + 1
+      };
+    case SET_BOARD_6:
+      return { tries: 0, size: 6 };
+    case SET_BOARD_12:
+      return { tries: 0, size: 12 };
+    case SET_BOARD_16:
+      return { tries: 0, size: 16 };
+    case SET_BOARD_20:
+      return { tries: 0, size: 20 };
+    case SET_BOARD_30:
+      return { tries: 0, size: 30 };
+    case MATCH_OPEN_CARDS:
+      return {
+        ...state,
+        matchedCards: state.matchedCards + 2
+      };
+    case GAME_FINISHED:
+      return {
+        ...state,
+        gameFinished: true,
+      };
+    default:
+      return state;
+  }
+};
+
 const memoryapp = combineReducers({
   memoryboard,
   openCards,
+  score,
 });
 
 export default memoryapp;
