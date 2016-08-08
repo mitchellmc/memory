@@ -17,6 +17,9 @@ body{
   display: -webkit-flex;
   display: flex;
 
+	width: 75%;
+	heigth: 75%;
+
 	-webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
