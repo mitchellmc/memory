@@ -5,6 +5,7 @@ import {
   SOLVED,
 } from '../constants';
 import classNames from 'classnames';
+import animate from '../animate.css';
 
 class MemorySquare extends React.Component {
   static propTypes = {
@@ -33,7 +34,11 @@ class MemorySquare extends React.Component {
       evaluate,
     } = this.props
 
-    let colorStatus = classNames('flex-item', {solved: square.status === SOLVED} , {unsolved: square.status !== SOLVED})
+    let colorStatus = classNames('flex-item animated',
+      { solved: square.status === SOLVED },
+      { flipInY: square.status === FACING_UP },
+      { unsolved: square.status !== SOLVED }
+    )
 
     return(
       <div

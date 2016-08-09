@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import MemoryRow from './MemoryRow';
 import css from '../main.css';
+import animate from '../animate.css';
 
 class MemoryBoard extends React.Component {
   static propTypes = {
