@@ -27,8 +27,6 @@ class MemoryBoard extends React.Component {
 
     return (
       <div>
-        <h2>Memory Board</h2>
-
         <div className='board-selector'>
           <select onChange={(evt) => {
             setMemoryBoard(evt.target.value);
@@ -39,15 +37,6 @@ class MemoryBoard extends React.Component {
             <option value='20'>20 Squares</option>
             <option value='30'>30 Squares</option>
           </select>
-          <div className='score'>
-             {(() => {
-              if(score.gameFinished) {
-                let calculatedScore = ((score.size/score.tries) * 1000);
-                const roundedScore = Math.round(calculatedScore);
-                return `Your score is ${roundedScore} !`
-              }
-            })()}
-          </div>
         </div>
 
         <div className='flex-container'>
@@ -62,6 +51,16 @@ class MemoryBoard extends React.Component {
               />
             )
           }
+        </div>
+
+        <div className='score'>
+           {(() => {
+            if(score.gameFinished) {
+              let calculatedScore = ((score.size/score.tries) * 1000);
+              const roundedScore = Math.round(calculatedScore);
+              return `Your score is ${roundedScore} !`
+            }
+          })()}
         </div>
 
       </div>
