@@ -1,8 +1,8 @@
+/* eslint-disable */
 var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
