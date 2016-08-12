@@ -7,13 +7,13 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-register",
     "test:watch": "./node_modules/.bin/mocha --compilers js:babel-register -w",
-    "webpack": "./node_modules/.bin/webpack --progress -p",
     "clean": "rimraf build",
     "copy-index": "cp src/index.html build",
-    "build": " npm run clean && mkdir build && npm run copy-index && webpack --env.dev",
-    "server": "webpack-dev-server --env.dev --content-base build --port 3000",
-    "dev": "npm run build && npm run server",
-    "production": "npm run build && npm run webpack"
+    "build": " npm run clean && mkdir build && npm run copy-index",
+    "dev": "npm run build && npm run serve",
+    "production": "npm run build && npm run deploy",
+    "serve": "NODE_ENV=development webpack-dev-server --content-base build/ --port 3000 --devtool eval --progress --colors",
+    "deploy": "NODE_ENV=production BABEL_ENV=production ./node_modules/.bin/webpack -p --config webpack.production.config.js"
   },
   "keywords": [
     "memory",
