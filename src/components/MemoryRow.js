@@ -32,17 +32,17 @@ class MemoryRow extends React.Component {
     return (
       <div>
         <ReactCSSTransitionGroup
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
+          transitionEnterTimeout={900}
+          transitionLeaveTimeout={900}
           transitionAppear={true}
-          transitionAppearTimeout={500}
+          transitionAppearTimeout={900}
           transitionName={
             {
               enter: 'rotateIn',
               enterActive: 'pulse',
               leave: 'rotateOut',
               leaveActive: 'rotateOutDownLeft',
-              appear: 'fadeInRightBig',
+              appear: 'pulse',
               appearActive: 'pulse'
             }
         }>
