@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {clickMe} from "./memory/BoardGenerator.js";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={clickMe}>
+          Click Me!
+        </button>
+        {/* <Counter /> */}
       </header>
     </div>
   );
